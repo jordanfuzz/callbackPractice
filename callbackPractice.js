@@ -99,7 +99,11 @@ uniq(names, function(uniqArr){
 // 6. Write a function called each that takes in an array of names. For each item, use a callback 
 // function to return the indices and item.
 
-    //Code Here 
+function each(names, describeArray) {
+  names.forEach(function(element, index) {
+    describeArray(element, index)
+  })
+}
 
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -110,7 +114,12 @@ each(names, function(item, indice){
 // 7. Write a function called getUserById that looks at the array of user objects (users) and searches for a user by ID 
 // and returns that user.
 
- //Code Here
+function getUserById(users, userId, printInfo) {
+  users.forEach(function(element) {
+    if(element.id = userId)
+        printInfo(element)
+  })
+}
 
 var users = [
   {
@@ -130,7 +139,7 @@ var users = [
     email: 'ryan@gmail.com',
     name: 'Ryan',
     address: '192 East 32 North'
-  },
+  }
 ];
 
 getUserById(users, '16t', function(user){
